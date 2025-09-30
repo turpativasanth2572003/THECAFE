@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.nav-container {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 2px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.item {
+    padding: 12px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.item:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.bg-container {
+    background-image: url("https://www.w3schools.com/w3images/coffeehouse.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    min-height: 500px;
+    width: 100%;
+    filter: grayscale(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.text-container1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    text-align: center;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: 8px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.text-container2,
+.text-container3 {
+    position: absolute;
+    font-size: 1rem;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.text-container2 {
+    bottom: 20px;
+    background-color: rgba(0,0,0,0.8);
+    left: 20px;
+}
+
+.text-container3 {
+    bottom: 20px;
+    right: 20px;
+    color: white;
+}
+
+/* Main Content */
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.main > .main-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.about > p {
+    letter-spacing: 4px;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    width: fit-content;
+    margin: 50px auto;
+    text-align: center;
+    font-weight: 600;
+}
+
+.para-1,
+.para-2 {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.para-3 {
+    padding: 30px;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    border-left: 4px solid #ddd;
+    margin: 30px 0;
+}
+
+.image {
+    margin-top: 40px;
+}
+
+.image > img {
+    width: 100%;
+    filter: grayscale(70%);
+    transition: filter 0.3s ease;
+}
+
+.image > img:hover {
+    filter: grayscale(30%);
+}
+
+.image > p {
+    padding: 15px 0;
+    color: #555;
+}
+
+/* Menu Section */
+.themenu {
+    margin: 60px 0 40px 0;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.menu {
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.menu input[type="radio"] {
+    display: none;
+}
+
+.menu label {
+    display: block;
+    width: 50%;
+    text-align: center;
+    padding: 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+    margin: 0;
+    float: left;
+    
+}
+
+.menu label:hover {
+    background-color: #ddd;
+}
+
+.menu label h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+#eat:checked ~ label[for="eat"],
+#drink:checked ~ label[for="drink"] {
+    background-color: #000;
+    color: #fff;
+}
+
+#eat:checked ~ label[for="eat"] h3,
+#drink:checked ~ label[for="drink"] h3 {
+    color: #fff;
+}
+
+
+.container-1,
+.container-2 {
+    clear: both;
+}
+
+.eat,
+.drink {
+    display: none;
+    padding: 30px;
+    line-height: 1.8;
+    background-color: #fff;
+    animation: fadeIn 0.5s ease;
+}
+
+#eat:checked ~ .container-1 .eat {
+    display: block;
+}
+
+#drink:checked ~ .container-2 .drink {
+    display: block;
+}
+
+.content1,
+.content2,
+.content3,
+.content4,
+.content5 {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.content1:last-child,
+.content2:last-child,
+.content3:last-child,
+.content4:last-child,
+.content5:last-child {
+    border-bottom: none;
+}
+
+.eat h3,
+.drink h3 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.eat p,
+.drink p {
+    color: #666;
+    margin: 0;
+}
+
+/* Images */
+.image-1 {
+    margin-top: 60px;
+    filter: grayscale(50%);
+    transition: filter 0.3s ease;
+}
+
+.image-1:hover {
+    filter: grayscale(20%);
+}
+
+.image-1 > img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Location Section */
+.location {
+    margin-top: 60px;
+}
+
+.where > p {
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.location > p {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.image-2 {
+    margin-top: 30px;
+    filter: grayscale(70%);
+    transition: filter 0.3s ease;
+}
+
+.image-2:hover {
+    filter: grayscale(40%);
+}
+
+.image-2 > img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.fvi {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.f > p {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 16px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.paragraph > p {
+    color: #555;
+}
+
+.paragraph-1 > p {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Form */
+.input {
+    margin-top: 20px;
+}
+
+.my-input {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.my-input:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+.send {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.send > p {
+    background-color: #000;
+    color: #fff;
+    padding: 14px 32px;
+    width: fit-content;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.send > p:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer {
+    margin-top: 60px;
+    width: 100%;
+    height: 150px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+
+.footer > p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
